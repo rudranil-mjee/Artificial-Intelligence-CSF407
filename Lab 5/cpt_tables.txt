@@ -1,0 +1,29 @@
+FIRST-ORDER CPT: P(next | current)
+  <START>: the=1.000
+  the: cat=0.250, dog=0.250, mat=0.167, rug=0.167, park=0.167
+  cat: sat=0.667, ran=0.333
+  sat: on=1.000
+  on: the=1.000
+  mat: <END>=1.000
+  rug: <END>=1.000
+  dog: sat=0.667, ran=0.333
+  ran: to=1.000
+  to: the=1.000
+  park: <END>=1.000
+
+SECOND-ORDER CPT: P(next | previous two)
+  (<START>, <START>): the=1.000
+  (<START>, the): cat=0.500, dog=0.500
+  (the, cat): sat=0.667, ran=0.333
+  (cat, sat): on=1.000
+  (sat, on): the=1.000
+  (on, the): mat=0.500, rug=0.500
+  (the, mat): <END>=1.000
+  (the, rug): <END>=1.000
+  (the, dog): sat=0.667, ran=0.333
+  (dog, sat): on=1.000
+  (dog, ran): to=1.000
+  (ran, to): the=1.000
+  (to, the): park=1.000
+  (the, park): <END>=1.000
+  (cat, ran): to=1.000
